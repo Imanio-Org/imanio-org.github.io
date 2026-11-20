@@ -103,6 +103,20 @@
   .facts svg{width:19px; height:19px; flex:none; margin-top:3px; stroke:var(--green);
              fill:none; stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round}
 
+  /* ── Devices ──────────────────────────────────────────────────────────── */
+  /* Tablet and watch side by side; the tablet carries the row, the watch sits
+     at its real, smaller scale so the pair reads as "the same app everywhere". */
+  .devices{display:grid; grid-template-columns:minmax(0,.62fr) minmax(0,1fr) minmax(0,.34fr);
+           gap:28px; align-items:center; margin-top:40px}
+  .devices figure{margin:0; text-align:center}
+  .devices img{width:100%; height:auto; display:block; border-radius:22px;
+               border:1px solid var(--line); box-shadow:0 26px 70px rgba(0,0,0,.55)}
+  .devices .watch img{border-radius:34%/28%; max-width:190px; margin:0 auto}
+  .devices .tablet-portrait img{max-width:360px; margin:0 auto}
+  .devices figcaption{font-size:13px; color:var(--dim); margin-top:12px; font-weight:700}
+  .devices-head{text-align:center; max-width:640px; margin:96px auto 0}
+  .devices-head p{color:var(--dim)}
+
   /* ── Beta form ────────────────────────────────────────────────────────── */
   .beta-bg{background:radial-gradient(100% 120% at 50% 0%, #07422A 0%, #02140D 70%)}
   .beta{max-width:620px; margin:0 auto; text-align:center}
@@ -185,6 +199,8 @@
     .hero{grid-template-columns:1fr; gap:44px; padding:16px 24px 56px}
     .row{grid-template-columns:1fr; gap:40px}
     .row + .row{margin-top:64px}
+    .devices{grid-template-columns:1fr; gap:36px}
+    .devices-head{margin-top:72px}
     /* Undo the desktop flip: on one column the copy always leads. */
     .row.flip .copy{order:0}
     .row.flip .media{order:0}
@@ -299,7 +315,7 @@
             </g>
           </svg>
           <img class="shot" src="assets/screens/02-player.webp" width="720" height="1565" loading="lazy"
-               alt="Der Player der IMANIO-App: das Hörbuch „Ein Salam, das alles veränderte“ mit Titelbild, Kapitelleiste und Wiedergabetasten">
+               alt="Der Player der IMANIO-App: das Hörbuch „Schwangerschaft – Jede Sekunde ist Ibādah“ mit Titelbild, Fortschritt und Wiedergabetasten">
         </div>
       </div>
 
@@ -366,8 +382,35 @@
             </g>
           </svg>
           <img class="shot" src="assets/screens/04-explore.webp" width="720" height="1565" loading="lazy"
-               alt="Der Entdecken-Bereich der IMANIO-App mit Suche und Themenkategorien von Grundlage des Islam bis Charakter und Entfaltung">
+               alt="Der Entdecken-Bereich der IMANIO-App mit Suche und Themenkategorien von Grundlage des Islam bis Wissenschaft und Islam">
         </div>
+      </div>
+
+      <!-- Devices: the same app on tablet and watch -->
+      <div class="devices-head">
+        <span class="pill gold">Überall dabei</span>
+        <h2>Auf allen deinen Geräten</h2>
+        <p>
+          Auf dem iPad und dem Android-Tablet mit mehr Platz für Cover und Serien,
+          am Handgelenk mit der Apple Watch — dein Fortschritt geht überall mit.
+        </p>
+      </div>
+      <div class="devices">
+        <figure class="tablet-portrait">
+          <img src="assets/screens/05-ipad.webp" width="820" height="1180" loading="lazy"
+               alt="IMANIO auf dem iPad: Startseite mit Vers des Tages, Tagesziel, neu eingetroffenen und empfohlenen Hörbüchern">
+          <figcaption>iPad</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/screens/06-android-tablet.webp" width="1200" height="750" loading="lazy"
+               alt="IMANIO auf einem Android-Tablet: Startseite mit Seitenleiste, Vers des Tages und Weiterhören">
+          <figcaption>Android-Tablet</figcaption>
+        </figure>
+        <figure class="watch">
+          <img src="assets/screens/07-watch.webp" width="380" height="463" loading="lazy"
+               alt="IMANIO auf der Apple Watch: Weiterhören mit Sure Al-Baqara und einem Hörbuch">
+          <figcaption>Apple Watch</figcaption>
+        </figure>
       </div>
 
     </div>
