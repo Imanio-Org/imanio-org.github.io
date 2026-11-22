@@ -52,13 +52,12 @@ getting them wrong is worse than leaving them:
    and the HRB number are missing. A German commercial site needs all of them
    under § 5 DDG — an incomplete one is a real Abmahnung risk. The gap is
    marked with a comment in `index.html`.
-2. **The social channels do not exist yet.** Instagram, TikTok and YouTube are
-   rendered as disabled "bald" chips, not as links. Pointing them at guessed
-   handles would send visitors to accounts belonging to someone else. When the
-   accounts exist, replace each `<span>` in the "Folge IMANIO" section with an
-   `<a href="…">` — and update `AppConstants.socialLinks` in the app
-   (`repos/imanio/lib/core/constants/app_constants.dart`), which is the single
-   place the app reads them from.
+2. **TikTok does not exist yet.** Instagram (`@imanio_app`) and YouTube
+   (`@AppImanio`) are linked since IM_052 (2026-11-22, handles from the owner);
+   TikTok stays a disabled "bald" chip — a guessed handle would send visitors to
+   someone else's account. When it exists, replace its `<span>` with an
+   `<a href="…">` and add it to `FollowView` (iOS `AppConfig`) and
+   `FollowScreen` (Android `AppConfig`).
 
 3. **The store badges link nowhere.** Same reason: the app is in closed testing
    and has no public App Store or Play listing. See "Turning the store links
